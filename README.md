@@ -26,12 +26,12 @@ Although the intention is deep comparison, `isEq` can compare several datatypes.
 Node:
 
 ```Shell
-npm install --save iseq
+npm install --save @codefeathers/iseq
 ```
 
 In the browser:
 ```HTML
-<script src="https://unpkg.com/iseq">
+<script src="https://unpkg.com/@codefeathers/iseq">
 ```
 
 ## Usage
