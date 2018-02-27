@@ -1,8 +1,8 @@
 {
 	"name": "iseq",
 	"version": "1.0.0",
-	"description": "Deep compare objects",
-	"main": "index.js",
+	"description": "Deep compare objects and arrays",
+	"main": "dist/iseq.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

@@ -4,7 +4,7 @@
  * ↘️↘️
  * @author Muthu Kumar <https://mkr.pw>
  * isEq(item1, item2 [, compareKeys])
- * @description Deep compares two objects or arrays and returns boolean
+ * @description Deep compares objects or arrays and returns boolean.
  * Supports Number, String, Boolean, Regexp, Objects, Arrays
  * @param {*} item1 - Object or Array to compare against.
  * @param {*} item2 - Object or Array to compare with.
