@@ -1,0 +1,29 @@
+{
+	"name": "iseq",
+	"version": "1.0.0",
+	"description": "Deep compare objects",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/codefeathers/isEq.git"
+	},
+	"keywords": [
+		"isEqual",
+		"number",
+		"string",
+		"object",
+		"array",
+		"null",
+		"regexp",
+		"deep-compare"
+	],
+	"author": "Muthu Kumar (https://mkr.pw)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/codefeathers/isEq/issues"
+	},
+	"homepage": "https://github.com/codefeathers/isEq#readme"
+}
