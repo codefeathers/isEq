@@ -77,11 +77,9 @@ const isEq = (item1, item2, compareKeys) => {
 				(Array.isArray(item1[Key]) && Array.isArray(item2[Key]))) {
 				if (!isEq(item1[Key], item2[Key])) {
 					return false;
-					break;
 				};
 			} else {
 				return false;
-				break;
 			};
 		};
 	};
