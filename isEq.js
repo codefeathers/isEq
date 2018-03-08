@@ -18,12 +18,11 @@ const isEq = (item1, item2, compareKeys) => {
 
 	// Arrays are of type object, hence let's go one further step
 	// to prove type inequality
-	if (Array.isArray(item1))
-		if (!Array.isArray(item2))
-			return false;
-	if (Array.isArray(item2))
-		if (!Array.isArray(item1))
-			return false;
+	if ((Array.isArray(item1)
+		&& !Array.isArray(item2))
+		|| ((Array.isArray(item2)
+		&& !Array.isArray(item1))))
+		return false;
 
 	// Since types are already equal, let's find if items are equal.
 	if ((typeof item1 === 'number') ||
@@ -31,12 +30,11 @@ const isEq = (item1, item2, compareKeys) => {
 		(typeof item1 === 'boolean') ||
 		(item1 === null) ||
 		(item1 === undefined)) {
-		if (item1 === item2) return true;
-		else return false;
+		return (item1 === item2);
 	};
 
 	// 'NaN's are special. They aren't equal to each other.
-	if (item1 === NaN && item2 === NaN) return true;
+	if (Number.isNaN(item1) && Number.isNaN(item2)) return true;
 
 	// Regexp needs to be Stringified first before comparing equality
 	if (item1 instanceof RegExp) return String(item1) === String(item2);
@@ -68,7 +66,7 @@ const isEq = (item1, item2, compareKeys) => {
 
 		let Key = compareKeys[KeyIndex];
 		if (Array.isArray(item1[Key]) && Array.isArray(item2[Key])) {
-			const Key = KeyIndex;
+			Key = KeyIndex;
 		};
 
 		// Inequality at this point can be because it's just comparing
