@@ -1,10 +1,10 @@
-# isEq
+# ≡
 
-### Deep-compare objects
+### isEq -- Deep-compare objects
 
 `isEq` is a very tiny module that deep compares objects or arrays.
 
-Although the intention is deep comparison, `isEq` can compare several datatypes.
+Although its intention is deep comparison, `isEq` can compare several datatypes.
 
 ## Supports
 
@@ -79,3 +79,6 @@ var entities = [
 
 const evilEntities = entities.filter(eachEntity => isEq(eachEntity, { isEvil: true }, ['isEvil']));
 ```
+<br><br>
+
+***Written by [@MKRhere](https://mkr.pw)*** —
