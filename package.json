@@ -1,29 +1,37 @@
 {
-	"name": "@codefeathers/iseq",
-	"version": "1.0.4",
-	"description": "Deep compare objects and arrays",
-	"main": "umd/isEq.min.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/codefeathers/isEq.git"
-	},
-	"keywords": [
-		"isEqual",
-		"number",
-		"string",
-		"object",
-		"array",
-		"null",
-		"regexp",
-		"deep-compare"
-	],
-	"author": "Muthu Kumar (https://mkr.pw)",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/codefeathers/isEq/issues"
-	},
-	"homepage": "https://github.com/codefeathers/isEq#readme"
+  "name": "@codefeathers/iseq",
+  "version": "1.1.0",
+  "description": "Deep compare objects and arrays",
+  "main": "umd/isEq.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./build.sh",
+    "prepublishOnly": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefeathers/isEq.git"
+  },
+  "keywords": [
+    "isEqual",
+    "number",
+    "string",
+    "object",
+    "array",
+    "null",
+    "regexp",
+    "deep-compare"
+  ],
+  "author": "Muthu Kumar (https://mkr.pw)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codefeathers/isEq/issues"
+  },
+  "homepage": "https://github.com/codefeathers/isEq#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browserify": "^16.1.1",
+    "uglify-js": "^3.3.13"
+  }
 }

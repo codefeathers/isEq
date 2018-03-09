@@ -24,17 +24,19 @@ const isEq = (item1, item2, compareKeys) => {
 		&& !Array.isArray(item1))))
 		return false;
 
+	// 'NaN's are special. They aren't equal to each other.
+	if (typeof item1 === 'number')
+		if(isNaN(item1) && isNaN(item2))
+			return true;
+		else return item1 === item2;
+
 	// Since types are already equal, let's find if items are equal.
-	if ((typeof item1 === 'number') ||
-		(typeof item1 === 'string') ||
+	if ((typeof item1 === 'string') ||
 		(typeof item1 === 'boolean') ||
 		(item1 === null) ||
 		(item1 === undefined)) {
 		return (item1 === item2);
 	};
-
-	// 'NaN's are special. They aren't equal to each other.
-	if (Number.isNaN(item1) && Number.isNaN(item2)) return true;
 
 	// Regexp needs to be Stringified first before comparing equality
 	if (item1 instanceof RegExp) return String(item1) === String(item2);
@@ -72,7 +74,6 @@ const isEq = (item1, item2, compareKeys) => {
 		// Inequality at this point can be because it's just comparing
 		// two objects or arrays that may or may not be equivalent.
 		if (item1[Key] !== item2[Key]) {
-
 			if (typeof (item1[Key] === 'object') && typeof (item2[Key] === 'object') ||
 				(Array.isArray(item1[Key]) && Array.isArray(item2[Key]))) {
 				if (!isEq(item1[Key], item2[Key])) {
