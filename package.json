@@ -7,7 +7,7 @@
     "test": "jasmine",
     "build": "jasmine && ./build.sh",
     "prepublishOnly": "jasmine && ./build.sh",
-    "release": "npm test && npm build && npm publish"
+    "release": "npm test && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
