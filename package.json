@@ -1,12 +1,13 @@
 {
   "name": "@codefeathers/iseq",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Deep compare objects and arrays",
   "main": "umd/isEq.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./build.sh",
-    "prepublishOnly": "./build.sh"
+    "test": "jasmine",
+    "build": "jasmine && ./build.sh",
+    "prepublishOnly": "jasmine && ./build.sh",
+    "release": "npm test && npm build && npm publish"
   },
   "repository": {
     "type": "git",
