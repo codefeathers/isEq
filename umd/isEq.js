@@ -42,7 +42,8 @@ var isEq = function isEq(item1, item2, compareKeys) {
 	if (item1 instanceof RegExp) return String(item1) === String(item2);
 
 	// If none of the above conditions returned, then check if inputs are handlable
-	if ((typeof item1 === 'undefined' ? 'undefined' : _typeof(item1)) !== 'object' || (typeof item2 === 'undefined' ? 'undefined' : _typeof(item2)) !== 'object') throw new Error('[isEq] Unhandleable input!');
+	// If they're not, fall back to strict equality
+	if ((typeof item1 === 'undefined' ? 'undefined' : _typeof(item1)) !== 'object' || (typeof item2 === 'undefined' ? 'undefined' : _typeof(item2)) !== 'object') return item1 === item2;
 
 	var item1Keys = Object.keys(item1);
 	var item2Keys = Object.keys(item2);
