@@ -13,6 +13,11 @@
 
 const isEq = (item1, item2, compareKeys) => {
 
+	// Simple compare:
+	// If item1 and item2 are strictly equal, will
+	// pass all tests regardless of compare keys.
+	if(item1 === item2) return true;
+
 	// Returns false if different types are used.
 	if (typeof item1 !== typeof item2) return false;
 
@@ -25,10 +30,10 @@ const isEq = (item1, item2, compareKeys) => {
 		return false;
 
 	// 'NaN's are special. They aren't equal to each other.
-	if (typeof item1 === 'number')
-		if(isNaN(item1) && isNaN(item2))
-			return true;
+	if (typeof item1 === 'number') {
+		if(isNaN(item1) && isNaN(item2)) return false;
 		else return item1 === item2;
+	};
 
 	// Since types are already equal, let's find if items are equal.
 	if ((typeof item1 === 'string') ||
