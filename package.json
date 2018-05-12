@@ -1,6 +1,6 @@
 {
   "name": "@codefeathers/iseq",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Deep compare objects and arrays",
   "main": "umd/isEq.min.js",
   "scripts": {
