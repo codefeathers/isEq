@@ -13,13 +13,15 @@ Although its intention is deep comparison, `isEq` can compare several datatypes.
 | Number              	| ✅ 	|
 | String              	| ✅ 	|
 | Boolean             	| ✅ 	|
-| Regexp              	| ✅ 	|
 | Object              	| ✅ 	|
 | Array               	| ✅ 	|
-| Cyclic Object/Array 	| ❌ 	|
-| Function            	| ❌ 	|
-| Symbol              	| ❌ 	|
-| Blob                	| ❌ 	|
+| Cyclic Object/Array 	| ✅ 	|
+| Regexp              	| ✅ 	|
+| Function            	| ✅ 	|
+| Symbol              	| ✅ 	|
+
+> Note: functions and symbols are compared by identity. Regexp is stringified before comparison.
+> Unhandleable inputs fall back to strict equality (`===`)
 
 ## Installation
 

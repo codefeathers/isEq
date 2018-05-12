@@ -47,8 +47,9 @@ const isEq = (item1, item2, compareKeys) => {
 	if (item1 instanceof RegExp) return String(item1) === String(item2);
 
 	// If none of the above conditions returned, then check if inputs are handlable
+	// If they're not, fall back to strict equality
 	if (typeof (item1) !== 'object' || typeof (item2) !== 'object')
-		throw new Error('[isEq] Unhandleable input!');
+		return (item1 === item2);
 
 	const item1Keys = Object.keys(item1);
 	const item2Keys = Object.keys(item2);
