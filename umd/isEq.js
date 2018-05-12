@@ -16,6 +16,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var isEq = function isEq(item1, item2, compareKeys) {
 
+	// Simple compare:
+	// If item1 and item2 are strictly equal, will
+	// pass all tests regardless of compare keys.
+	if (item1 === item2) return true;
+
 	// Returns false if different types are used.
 	if ((typeof item1 === 'undefined' ? 'undefined' : _typeof(item1)) !== (typeof item2 === 'undefined' ? 'undefined' : _typeof(item2))) return false;
 
@@ -24,7 +29,9 @@ var isEq = function isEq(item1, item2, compareKeys) {
 	if (Array.isArray(item1) && !Array.isArray(item2) || Array.isArray(item2) && !Array.isArray(item1)) return false;
 
 	// 'NaN's are special. They aren't equal to each other.
-	if (typeof item1 === 'number') if (isNaN(item1) && isNaN(item2)) return true;else return item1 === item2;
+	if (typeof item1 === 'number') {
+		if (isNaN(item1) && isNaN(item2)) return false;else return item1 === item2;
+	};
 
 	// Since types are already equal, let's find if items are equal.
 	if (typeof item1 === 'string' || typeof item1 === 'boolean' || item1 === null || item1 === undefined) {
